@@ -2,11 +2,11 @@ import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 import { openLogin } from "../../redux/slice/login/loginReducer";
-import TrikosService from "../../Services/Axios/AxiosTrikos.service";
+import TrikosService from "../../Services/AxiosTrikos.service";
 import Login from "../views/Login";
 import DashboardRoutes from "./DashboardRoutes";
 
-const AppRouters = () => {
+function AppRouters() {
   const open = useAppSelector((state) => state.login.open);
 
   const dispatch = useAppDispatch();
@@ -35,6 +35,6 @@ const AppRouters = () => {
       </Routes>
     </BrowserRouter>
   );
-};
+}
 
 export default AppRouters;

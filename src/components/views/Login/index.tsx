@@ -6,11 +6,11 @@ import {
   addTokenUser,
   openLogin,
 } from "../../../redux/slice/login/loginReducer";
-import AuthenticateService from "../../../Services/Axios/AxiosAuthenticate.service";
+import AuthenticateService from "../../../Services/AxiosAuthenticate.service";
 
 interface Props {}
 
-const Login = (props: Props) => {
+const Login: React.FC = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   localStorage.removeItem("token");
@@ -81,5 +81,5 @@ const Login = (props: Props) => {
     </div>
   );
 };
-
 export default Login;
+

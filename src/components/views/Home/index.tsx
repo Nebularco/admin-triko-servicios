@@ -1,10 +1,19 @@
-import React from 'react';
+import React from "react";
+import { useAppSelector } from "../../../redux/hooks/hooks";
+import Pages from "../../common/Pages";
 
-interface Props {
-}
+interface Props {}
 
 const Home = (props: Props) => {
-    return null;
+  const drawer = useAppSelector((state) => state.drawer.open);
+
+  return (
+    <>
+      <Pages drawer={drawer}>
+        <h1>Hola Triko</h1>
+      </Pages>
+    </>
+  );
 };
 
 export default Home;

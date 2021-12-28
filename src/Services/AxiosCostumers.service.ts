@@ -1,4 +1,4 @@
-import http from "./http-common";
+import http from "../http-common";
 
 const get = (token: string) => {
   return http.get(`/application/client/clients`, {
