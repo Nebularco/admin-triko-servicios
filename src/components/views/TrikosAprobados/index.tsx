@@ -13,34 +13,53 @@ import { columns } from "./components/column";
 interface Props {}
 
 const TrikosAprobados = (props: Props) => {
-  const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(10);
   const [dataUser, setDataUser] = useState([]);
+  const [totalCustomers, setTotalCustomers] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [page, setPage] = useState(1);
+
   const drawer = useAppSelector((state) => state.drawer.open);
   const loading = useAppSelector((state) => state.loading.open);
   const dispatch = useDispatch();
 
-  const handleChangePage = (event: unknown, newPage: number) => {
-    setPage(newPage);
+  const handleChangePage = (
+    event: React.MouseEvent<HTMLButtonElement> | null,
+    newPage: number
+  ) => {
+    if (newPage < 1) {
+      setPage((newPage = 1));
+    } else {
+      setPage(newPage);
+    }
   };
 
   const handleChangeRowsPerPage = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
+    setRowsPerPage(parseInt(event.target.value, 10));
   };
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      dispatch(setLoading(true));
-      TrikosService.get(token).then((response: any) => {
-        setDataUser(response.data);
-        dispatch(setLoading(false));
+      if (page === 1 && rowsPerPage === 10) {
+        dispatch(setLoading(true));
+      }
+      TrikosService.getPage(token, rowsPerPage, page).then((res: any) => {
+        console.log("rowsPerPage: ", rowsPerPage);
+        console.log("page: ", page);
+        const response = res.data;
+        const { data, meta } = response;
+        setDataUser(data);
+        console.log(meta.page);
+        setTotalCustomers(meta.page.total);
+        console.log(page);
+        if (page === 1 && rowsPerPage === 10) {
+          dispatch(setLoading(false));
+        }
       });
     }
-  }, []);
+  }, [rowsPerPage, page]);
   return (
     <Pages drawer={drawer} loading={loading} styles="loadingB">
       <Tables>
@@ -49,12 +68,12 @@ const TrikosAprobados = (props: Props) => {
       </Tables>
 
       <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
+        rowsPerPageOptions={[5, 10, 100]}
         component="div"
-        count={5}
-        rowsPerPage={rowsPerPage}
+        count={totalCustomers}
         page={page}
         onPageChange={handleChangePage}
+        rowsPerPage={rowsPerPage}
         onRowsPerPageChange={handleChangeRowsPerPage}
       />
     </Pages>

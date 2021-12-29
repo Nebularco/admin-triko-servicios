@@ -57,6 +57,7 @@ const DrawerAndHeader = (props: Props) => {
     navigate("/");
   };
 
+  
   return (
     <>
       <AppBar position="fixed" open={drawer}>

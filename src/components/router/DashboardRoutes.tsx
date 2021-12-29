@@ -4,6 +4,7 @@ import DrawerAndHeader from "../DrawerHeader";
 import Custumers from "../views/Custumers";
 import Home from "../views/Home";
 import Login from "../views/Login";
+import Orders from "../views/Orders";
 import ServiceRequests from "../views/ServiceRequests";
 import TrikosAprobados from "../views/TrikosAprobados";
 import User from "../views/User";
@@ -18,7 +19,7 @@ const DashboardRoutes = () => {
         <Route path="clients" element={<Custumers />} />
         <Route path="approved" element={<TrikosAprobados />} />
         <Route path="service-requests" element={<ServiceRequests />} />
-        <Route path="orders" element={<Home />} />
+        <Route path="orders" element={<Orders />} />
         <Route path="logout" element={<Login />} />
         <Route path="Users/:table/:id" element={<User />} />
       </Routes>

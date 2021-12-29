@@ -13,36 +13,48 @@ import { columns } from "./components/column";
 interface Props {}
 
 const Custumers = (props: Props) => {
-  const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(10);
   const [dataUser, setDataUser] = useState([]);
   const [totalCustomers, setTotalCustomers] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [page, setPage] = useState(1);
+
   const drawer = useAppSelector((state) => state.drawer.open);
   const loading = useAppSelector((state) => state.loading.open);
   const dispatch = useDispatch();
 
-  const handleChangePage = () => {
-    setPage(page + 1);
+  const handleChangePage = (
+    event: React.MouseEvent<HTMLButtonElement> | null,
+    newPage: number
+  ) => {
+    if (newPage < 1) {
+      setPage((newPage = 1));
+    } else {
+      setPage(newPage);
+    }
   };
 
   const handleChangeRowsPerPage = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    setRowsPerPage(+event.target.value);
+    setRowsPerPage(parseInt(event.target.value, 10));
   };
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      dispatch(setLoading(true));
+      if (page === 1 && rowsPerPage === 10) {
+        dispatch(setLoading(true));
+      }
       ClientsService.getPagination(token, rowsPerPage, page).then((res) => {
         const response = res.data;
         const { data, meta } = response;
         setDataUser(data);
-        setPage(meta.page["current-page"]);
+        console.log(meta.page);
         setTotalCustomers(meta.page.total);
-        console.log(meta.page["current-page"]);
-        dispatch(setLoading(false));
+        console.log(page);
+        if (page === 1 && rowsPerPage === 10) {
+          dispatch(setLoading(false));
+        }
       });
     }
   }, [setDataUser, rowsPerPage, page]);
@@ -57,9 +69,9 @@ const Custumers = (props: Props) => {
         rowsPerPageOptions={[5, 10, 100]}
         component="div"
         count={totalCustomers}
-        rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}
+        rowsPerPage={rowsPerPage}
         onRowsPerPageChange={handleChangeRowsPerPage}
       />
     </Pages>

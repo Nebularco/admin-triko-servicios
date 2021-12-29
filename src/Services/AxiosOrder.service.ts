@@ -1,15 +1,16 @@
 import http from "../http-common";
 
 const get = (token: string) => {
-  return http.get(`/application/triko/trikos`, {
+  return http.get(`/application/order/orders`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
 };
+
 const getPage = (token: string, rowsPerPage: number, page: number) => {
   return http.get(
-    `/application/triko/trikos?page[number]=${page}&page[size]=${rowsPerPage}&`,
+    `/application/order/orders?page[number]=${page}&page[size]=${rowsPerPage}&`,
     {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -17,9 +18,10 @@ const getPage = (token: string, rowsPerPage: number, page: number) => {
     }
   );
 };
-const TrikosService = {
+
+const OrdersService = {
   get,
   getPage,
 };
 
-export default TrikosService;
+export default OrdersService;

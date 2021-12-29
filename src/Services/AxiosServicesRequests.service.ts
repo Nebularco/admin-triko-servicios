@@ -8,8 +8,20 @@ const get = (token: string) => {
   });
 };
 
+const getPage = (token: string, rowsPerPage: number, page: number) => {
+  return http.get(
+    `/application/service/servicesrequests?page[number]=${page}&page[size]=${rowsPerPage}&`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+};
+
 const ServicesRequestsService = {
   get,
+  getPage,
 };
 
 export default ServicesRequestsService;

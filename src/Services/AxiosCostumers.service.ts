@@ -10,7 +10,7 @@ const get = (token: string) => {
 
 const getPagination = (token: string, rowsPerPage: number, page: number) => {
   return http.get(
-    `/application/client/clients?page[size]=${rowsPerPage}&page{number]=${page}`,
+    `/application/client/clients?page[number]=${page}&page[size]=${rowsPerPage}&`,
     {
       headers: {
         Authorization: `Bearer ${token}`,
