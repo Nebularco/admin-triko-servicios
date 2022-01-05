@@ -223,6 +223,7 @@ const TableBodys = ({ dataUser, namePage }: Props) => {
         break;
     }
   };
+
   return <TableBody>{dataTable({ dataUser, namePage })}</TableBody>;
 };
 

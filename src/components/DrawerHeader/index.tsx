@@ -57,7 +57,6 @@ const DrawerAndHeader = (props: Props) => {
     navigate("/");
   };
 
-  
   return (
     <>
       <AppBar position="fixed" open={drawer}>
@@ -128,6 +127,7 @@ const DrawerAndHeader = (props: Props) => {
         variant="persistent"
         anchor="left"
         open={drawer}
+        className="drawer"
       >
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>

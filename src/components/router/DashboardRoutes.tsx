@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import { Home as RouterHome } from "../../config/router/paths";
 import DrawerAndHeader from "../DrawerHeader";
 import Custumers from "../views/Custumers";
 import Home from "../views/Home";
