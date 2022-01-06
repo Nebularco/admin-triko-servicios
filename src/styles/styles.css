@@ -1,0 +1,47 @@
+.paperContainer {
+    background: url(../components/views/Login/img/Login.png) no-repeat center center fixed;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.paperStyle {
+  padding: 24px;
+  height: 312px;
+  width: 328px;
+  align-items: center;
+  left: 476px;
+  top: 213px;
+  margin-top: 213px;
+  margin-bottom: 195px;
+  margin-left: 476px;
+  margin-right: 476px;
+  border-radius: 12px;
+  display: flex;
+}
+
+.buttonContainer {
+  width: 280px;
+  height: 56px;
+  background: #ffa70d;
+  border: 3;
+  border-radius: 5px;
+}
+
+.fieldContainer {
+  width: 280px;
+  height: 56px;
+  border-radius: 5px;
+  border: 1px;
+  order: 1;
+  padding: 0px 0px 0px 16px;
+}
+
+.logoContainer {
+  margin: 24px 0px;
+  flex: none;
+  left: 36.13%;
+  right: 36.13%;
+  top: 7.69%;
+  bottom: 84.62%;
+}
