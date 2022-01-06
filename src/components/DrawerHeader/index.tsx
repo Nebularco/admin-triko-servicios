@@ -22,6 +22,13 @@ import ListItem from "@mui/material/ListItem/ListItem";
 import ListItemText from "@mui/material/ListItemText/ListItemText";
 import { VIEWS } from "../../consts/paths-routers";
 import { DRAWERWIDTH } from "../../consts/drawer";
+import DeleteIcon from '@mui/icons-material/Delete';
+import RoomServiceIcon from '@mui/icons-material/RoomService';
+import GroupsIcon from '@mui/icons-material/Groups';
+import EngineeringIcon from '@mui/icons-material/Engineering';
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+import "../../styles/drawer.css"
+
 
 interface Props {}
 
@@ -56,6 +63,8 @@ const DrawerAndHeader = (props: Props) => {
     dispatch(closeLogin());
     navigate("/");
   };
+
+  const iconsList = ['RoomServiceIcon', 'GroupsIcon', 'EngineeringIcon', 'MonetizationOnIcon']
 
   return (
     <>
@@ -141,7 +150,7 @@ const DrawerAndHeader = (props: Props) => {
         <Divider />
         <List>
           {VIEWS.map((text) => (
-            <NavLink
+            <NavLink 
               key={text.labe}
               to={`/${text.url}`}
               style={({ isActive }) => {
@@ -152,8 +161,10 @@ const DrawerAndHeader = (props: Props) => {
                 };
               }}
             >
-              <ListItem autoFocus alignItems="center">
-                <ListItemText primary={text.labe} />
+              
+              <ListItem autoFocus alignItems="center" className= "drawer">
+                <DeleteIcon htmlColor= "rgba(0, 0, 0, 0.54)" fontSize="small" className= "icons-drawer"></DeleteIcon>
+                <ListItemText primary={text.labe} className= "item-text"  />
               </ListItem>
             </NavLink>
           ))}
