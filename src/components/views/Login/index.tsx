@@ -13,6 +13,7 @@ import {
 import AuthenticateService from "../../../Services/AxiosAuthenticate.service";
 import background from "./img/Login.png";
 import logo from "./img/Logo.svg";
+import "../../styles/style.css"
 
 
 interface Props {}
