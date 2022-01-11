@@ -15,7 +15,6 @@ export const openSlice = createSlice({
     addDataUser: (state, action) => {
       state.data = action.payload;
       const data = state.data;
-      console.log("addDataUser: " + data);
     },
   },
 });
