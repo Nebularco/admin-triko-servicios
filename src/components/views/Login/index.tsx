@@ -4,11 +4,16 @@ import Paper from "@mui/material/Paper/Paper";
 import TextField from "@mui/material/TextField/TextField";
 import { useState } from "react";
 import { useAppDispatch } from "../../../redux/hooks/hooks";
-import { addTokenUser, openLogin } from "../../../redux/slice/login/loginReducer";
+import {
+  addTokenUser,
+  openLogin,
+} from "../../../redux/slice/login/loginReducer";
 import AuthenticateService from "../../../Services/AxiosAuthenticate.service";
 import background from "./img/Login.png";
 import logo from "../../assets/img/Logo.svg";
-import "../../../styles/login/login.css"
+import "../../../styles/login/login.css";
+import Container from "@mui/material/Container/Container";
+import Avatar from "@mui/material/Avatar/Avatar";
 
 interface Props {}
 
@@ -56,42 +61,43 @@ const Login = (props: Props) => {
 
   return (
     <>
-      <div className="paperContainer">
-        <Paper className="paperStyle" elevation={10}>
-          <Grid container>
-            <Grid item xs={12} sm={12}>
-              <img src={logo} alt="logo" className="logoContainer" />
-            </Grid>
-            <div style={{ height: "24px" }}></div>
-            <Grid item xs={12} sm={12}>
-              <form onSubmit={handleSubmit}>
-                <TextField
-                  label="email"
-                  onChange={(e) => setEmail(e.target.value)}
-                  value={email}
-                  className="fieldContainer"
-                />
-                <div style={{ height: "24px" }}></div>
-                <TextField
-                  label="password"
-                  onChange={(e) => setPass(e.target.value)}
-                  value={pass}
-                  className="fieldContainer"
-                />
-                <div style={{ height: "24px" }}></div>
-                <Button
-                  type="submit"
-                  variant="contained"
-                  color="primary"
-                  className="buttonContainer"
-                >
-                  Login
-                </Button>
-              </form>
-            </Grid>
-          </Grid>
-        </Paper>
-      </div>
+      <Grid container component="main" className="root">
+        <Container
+          component={Paper}
+          elevation={5}
+          maxWidth="xs"
+          sx={{ maxWidth: "328px", width: "328px" }}
+          className="container"
+        >
+          <div className="div">
+            <img src={logo} alt="Avatar" className="avatar" />
+            <form onSubmit={handleSubmit}>
+              <TextField
+                label="email"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                className="fieldContainer"
+              />
+              <div style={{ height: "24px" }}></div>
+              <TextField
+                label="password"
+                onChange={(e) => setPass(e.target.value)}
+                value={pass}
+                className="fieldContainer"
+              />
+              <div style={{ height: "24px" }}></div>
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                className="buttonContainer"
+              >
+                Login
+              </Button>
+            </form>
+          </div>
+        </Container>
+      </Grid>
     </>
   );
 };

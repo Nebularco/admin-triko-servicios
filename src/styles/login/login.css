@@ -1,6 +1,35 @@
+.root {
+  background-image: url(../../components/assets/img/Login.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.container {
+
+  height: 312px;
+  max-width: 329px;
+  width: 328px;
+  margin-top: 213px;
+  border-radius: 12px;
+}
+
+.div {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  margin: 1px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
 .paperContainer {
-  background: url(../../components/assets/img/Login.png) no-repeat center
-    center fixed;
+  background: url(../../components/assets/img/Login.png) no-repeat center center
+    fixed;
   width: 100%;
   height: 100%;
   background-size: cover;
