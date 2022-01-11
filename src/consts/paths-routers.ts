@@ -1,6 +1,11 @@
+import RoomServiceIcon from '@mui/icons-material/RoomService';
+import GroupsIcon from '@mui/icons-material/Groups';
+import EngineeringIcon from '@mui/icons-material/Engineering';
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+
 export const VIEWS = [
-  { url: "services", labe: "Servicios" },
-  { url: "clients", labe: "Clientes" },
-  { url: "trikos", labe: "Trikos" },
-  { url: "orders", labe: "Ordenes" }
+  { url: "servicios", labe: "Servicios", icon: RoomServiceIcon },
+  { url: "clientes", labe: "Clientes", icon: GroupsIcon },
+  { url: "trikos", labe: "Trikos", icon: EngineeringIcon },
+  { url: "ordenes", labe: "Ordenes", icon: MonetizationOnIcon },
 ];

@@ -1,28 +1,12 @@
-import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
-import { openLogin } from "../../redux/slice/login/loginReducer";
-import TrikosService from "../../Services/AxiosTrikos.service";
+import { useAppSelector } from "../../redux/hooks/hooks";
 import Login from "../views/Login";
 import DashboardRoutes from "./DashboardRoutes";
 
 function AppRouters() {
   const open = useAppSelector((state) => state.login.open);
+  //const open = true;
 
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    console.log("AppRouters: ", token);
-
-    if (token) {
-      TrikosService.get(token).then((response: any) => {
-        console.log(response.data);
-        dispatch(openLogin());
-      });
-    }
-  }, [dispatch]);
-  console.log("AppRouters: ", open);
 
   return (
     <BrowserRouter>

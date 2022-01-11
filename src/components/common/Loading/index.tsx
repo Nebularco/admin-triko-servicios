@@ -1,5 +1,6 @@
 import LinearProgress from "@mui/material/LinearProgress/LinearProgress";
-import LogoTriko from "./assets/app-logo.png";
+import LogoTriko from "../../assets/img/Logo.svg";
+import "../../../styles/loading/loading.css";
 
 interface Props {}
 

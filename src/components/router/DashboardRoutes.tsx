@@ -1,26 +1,18 @@
 import { Route, Routes } from "react-router-dom";
-import DrawerAndHeader from "../DrawerHeader";
-import Custumers from "../views/Custumers";
-import Home from "../views/Home";
-import Login from "../views/Login";
+import Customers from "../views/Customers";
 import Orders from "../views/Orders";
-import ServiceRequests from "../views/ServiceRequests";
-import TrikosAprobados from "../views/TrikosAprobados";
-import User from "../views/User";
+import Services from "../views/Services";
+import Trikos from "../views/Trikos";
 
 const DashboardRoutes = () => {
   return (
     <>
-    <DrawerAndHeader />
       <Routes>
-        <Route path="" element={<Home />} />
-        <Route path="dashboard" element={<Home />} />
-        <Route path="clients" element={<Custumers />} />
-        <Route path="approved" element={<TrikosAprobados />} />
-        <Route path="service-requests" element={<ServiceRequests />} />
-        <Route path="orders" element={<Orders />} />
-        <Route path="logout" element={<Login />} />
-        <Route path="Users/:table/:id" element={<User />} />
+        <Route path="" element={<Services />} />
+        <Route path="servicios" element={<Services />} />
+        <Route path="clientes" element={<Customers />} />
+        <Route path="trikos" element={<Trikos />} />
+        <Route path="ordenes" element={<Orders />} />
       </Routes>
     </>
   );

@@ -2,27 +2,21 @@ import Button from "@mui/material/Button/Button";
 import Grid from "@mui/material/Grid/Grid";
 import Paper from "@mui/material/Paper/Paper";
 import TextField from "@mui/material/TextField/TextField";
-import { borderRadius } from "@mui/system";
 import { useState } from "react";
-import { HeadProvider, Title } from "react-head";
 import { useAppDispatch } from "../../../redux/hooks/hooks";
-import {
-  addTokenUser,
-  openLogin,
-} from "../../../redux/slice/login/loginReducer";
+import { addTokenUser, openLogin } from "../../../redux/slice/login/loginReducer";
 import AuthenticateService from "../../../Services/AxiosAuthenticate.service";
 import background from "./img/Login.png";
-import logo from "./img/Logo.svg";
-
+import logo from "../../assets/img/Logo.svg";
+import "../../../styles/login/login.css"
 
 interface Props {}
 
-const Login: React.FC = () => {
+const Login = (props: Props) => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   localStorage.removeItem("token");
   const dispatch = useAppDispatch();
-
   const handleSubmit = (e: any) => {
     e.preventDefault();
     if (!email.trim()) {
@@ -35,7 +29,6 @@ const Login: React.FC = () => {
     }
     userLogin();
   };
-
   const userLogin = async () => {
     try {
       var data = {
@@ -63,11 +56,6 @@ const Login: React.FC = () => {
 
   return (
     <>
-      <HeadProvider>
-        <div className="Home">
-          <Title>Login - Triko</Title>
-        </div>
-      </HeadProvider>
       <div className="paperContainer">
         <Paper className="paperStyle" elevation={10}>
           <Grid container>
@@ -107,4 +95,5 @@ const Login: React.FC = () => {
     </>
   );
 };
+
 export default Login;
