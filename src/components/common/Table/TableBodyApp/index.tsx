@@ -3,6 +3,7 @@ import TableCell from "@mui/material/TableCell/TableCell";
 import TableRow from "@mui/material/TableRow/TableRow";
 import { serviceWorkflowsLabels } from "../../../../consts/workflow";
 import { DataCustomers } from "../../../views/Customers/components/rows";
+import { DataOrders } from "../../../views/Orders/components/rows";
 import { DataServices } from "../../../views/Services/components/rows";
 import { DataTrikos } from "../../../views/Trikos/components/rows";
 
@@ -98,6 +99,32 @@ const TableBodyApp = (props: Props) => {
               </TableCell>
               <TableCell component="th" scope="row">
                 {data.attributes.workflow.workflow}
+              </TableCell>
+            </TableRow>
+          ))
+        );
+      case (name = "Ordenes"):
+        return (
+          Array.isArray(datos) &&
+          datos.map((data: DataOrders, index) => (
+            <TableRow
+              key={index}
+              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+            >
+              <TableCell component="th" scope="row">
+                {data.attributes.order_code}
+              </TableCell>
+              <TableCell component="th" scope="row">
+                {data.attributes.paymentMethod.attrs?.type}
+              </TableCell>
+              <TableCell component="th" scope="row">
+                {data.attributes.total}
+              </TableCell>
+              <TableCell component="th" scope="row">
+                {data.attributes.workflow.workflow}
+              </TableCell>
+              <TableCell component="th" scope="row">
+                {data.attributes.created_at}
               </TableCell>
             </TableRow>
           ))
