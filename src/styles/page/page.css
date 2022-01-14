@@ -1,0 +1,19 @@
+.icon-search {
+    filter: invert(64%) sepia(77%) saturate(805%) hue-rotate(350deg) brightness(100%) contrast(102%);
+}
+
+.icon-container {
+    border: none;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+    background-color: rgb(221, 218, 218);
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-header {
+    display: flex; flex-direction: row;
+}

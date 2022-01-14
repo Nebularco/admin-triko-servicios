@@ -1,0 +1,17 @@
+.table{
+    border-color: pink;
+}
+
+.table-row:hover{
+    background-color:rgba(0, 0, 0, 0.12);
+}
+
+.table-pagination{
+    display: flex;
+    justify-content: center;
+}
+
+.table-container {
+    border-radius: 12px;
+}
+

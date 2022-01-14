@@ -39,7 +39,8 @@ const DrawerApp = (props: Props) => {
       anchor="left"
       open={drawer}
     >
-      <DrawerHeader>
+      <DrawerHeader className="drawer-container">
+        <h3 className="title-drawer-header">Operación actual</h3>
         <IconButton onClick={handleDrawerClose}>
           {theme.direction === "ltr" ? (
             <ChevronLeftIcon />
@@ -47,8 +48,10 @@ const DrawerApp = (props: Props) => {
             <ChevronRightIcon />
           )}
         </IconButton>
+        
       </DrawerHeader>
       <List>
+        
         {VIEWS.map((text) => (
           <NavLink
             to={`/${text.url}`}
@@ -57,7 +60,7 @@ const DrawerApp = (props: Props) => {
               return {
                 color: isActive ? "red" : "",
                 textDecoration: "none",
-                background: isActive ? "gray" : "",
+                background: isActive ? "yellow" : "",
               };
             }}
           >

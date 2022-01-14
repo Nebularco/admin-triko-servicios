@@ -9,6 +9,8 @@ import { Main } from "../../../styles/main";
 import BarApp from "../DrawerAndBar/BarApp";
 import DrawerApp from "../DrawerAndBar/DrawerApp";
 import Loading from "../Loading";
+import SearchIcon from '@mui/icons-material/Search';
+import "../../../styles/page/page.css";
 
 interface Props {
   children: React.ReactChild[] | React.ReactChild;
@@ -19,6 +21,7 @@ interface Props {
   lg?: boolean | GridSize;
   md?: boolean | GridSize;
   xs?: boolean | GridSize;
+  
 }
 
 const Page = (props: Props) => {
@@ -35,10 +38,14 @@ const Page = (props: Props) => {
           <DrawerApp />
           <Main open={drawer}>
             <DrawerHeader />
-            <Container>
-              <Typography sx={{ mb: 3 }} variant="h4">
+            <Container >
+              <Typography sx={{ mb: 3 }} variant="h5" className="container-header">
                 {props.namePage}
+                <div className="icon-container">
+                  <SearchIcon className="icon-search"></SearchIcon>
+              </div>
               </Typography>
+              
 
               <Grid container spacing={3}>
                 <Grid item lg={props.lg} md={props.md} xs={props.xs}>

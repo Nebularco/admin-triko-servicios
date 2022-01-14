@@ -6,6 +6,7 @@ import { DataCustomers } from "../../../views/Customers/components/rows";
 import { DataOrders } from "../../../views/Orders/components/rows";
 import { DataServices } from "../../../views/Services/components/rows";
 import { DataTrikos } from "../../../views/Trikos/components/rows";
+import "../../../../styles/table/table.css";
 
 interface Props {
   data: never[];
@@ -21,7 +22,7 @@ const TableBodyApp = (props: Props) => {
         return (
           Array.isArray(datos) &&
           datos.map((data: DataServices, index) => (
-            <TableRow
+            <TableRow className="table-row"
               key={index}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
@@ -56,7 +57,7 @@ const TableBodyApp = (props: Props) => {
         return (
           Array.isArray(datos) &&
           datos.map((data: DataCustomers, index) => (
-            <TableRow
+            <TableRow className="table-row"
               key={index}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
@@ -80,7 +81,7 @@ const TableBodyApp = (props: Props) => {
         return (
           Array.isArray(datos) &&
           datos.map((data: DataTrikos, index) => (
-            <TableRow
+            <TableRow className="table-row"
               key={index}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >

@@ -1,9 +1,11 @@
 import Paper from "@mui/material/Paper/Paper";
 import Table from "@mui/material/Table/Table";
 import TableContainer from "@mui/material/TableContainer/TableContainer";
-import TablePagination from "@mui/material/TablePagination/TablePagination";
+/*import TablePagination from "@mui/material/TablePagination/TablePagination";*/
+import TablePagination from '@mui/material/TablePagination';
 import TableBodyApp from "../TableBodyApp";
 import TableHeadApp from "../TableHeadApp";
+import "../../../../styles/table/table.css";
 
 interface Props {
   data: never[];
@@ -19,20 +21,20 @@ interface Props {
 
 const TableApp = (props: Props) => {
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 700 }} aria-label="customized table">
+    <TableContainer component={Paper} >
+      <Table sx={{ minWidth: 700 }} aria-label="customized table" >
         <TableHeadApp columns={props.columns} />
-        <TableBodyApp data={props.data} nameTable={props.nameTable} />
+        <TableBodyApp data={props.data} nameTable={props.nameTable}  />
       </Table>
-      <TablePagination
-        rowsPerPageOptions={props.rows}
+      <TablePagination className="table-pagination"
         component="div"
-        count={props.pageCount} //Numero de paginas que tiene
+        count={props.pageCount}
+        page={props.pageNumber}
         onPageChange={props.changePage}
-        page={props.pageNumber} //La pagina en la que se encuentra
-        rowsPerPage={props.rowsPerPage} // la cantida de filas que tiene que mostrar
+        rowsPerPage={props.rowsPerPage}
         onRowsPerPageChange={props.onRowsPerPageChange}
-      />
+    />
+      
     </TableContainer>
   );
 };

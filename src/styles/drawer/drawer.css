@@ -1,3 +1,5 @@
+
+
 .drawer {
     color: #000;
     height: 56px;
@@ -7,6 +9,14 @@
     border-radius: 100px;
 }
 .drawer:hover {
+    background-color: #dad8d6;
+}
+
+.drawer:active {
     background-color: #FFA70D;
     color: white;
+}
+
+.drawer-header {
+    position: fixed;
 }
