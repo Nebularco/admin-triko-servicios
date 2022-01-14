@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography/Typography";
 import { AppBar } from "../../../../styles/bar/appBar";
 import { useAppDispatch, useAppSelector } from "../../../../redux/hooks/hooks";
 import { setDrawer } from "../../../../redux/slice/drawer";
+import logo from "../../../assets/img/Logo.svg";
 
 interface Props {}
 
@@ -28,9 +29,7 @@ const BarApp = (props: Props) => {
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" noWrap component="div">
-          Triko Servicios
-        </Typography>
+        <img src={logo} alt="Triko Servicios" />
       </Toolbar>
     </AppBar>
   );
