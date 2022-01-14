@@ -1,1 +1,1 @@
-export const DRAWERWIDTH = 240;
+export const DRAWERWIDTH = 256;

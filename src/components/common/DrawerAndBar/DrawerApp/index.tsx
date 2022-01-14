@@ -14,6 +14,7 @@ import ListItemText from "@mui/material/ListItemText/ListItemText";
 import { VIEWS } from "../../../../consts/paths-routers";
 import "../../../../styles/drawer/drawer.css";
 import ListItemIcon from "@mui/material/ListItemIcon/ListItemIcon";
+import Navitem from "./Nav-item";
 
 interface Props {}
 
@@ -48,29 +49,15 @@ const DrawerApp = (props: Props) => {
             <ChevronRightIcon />
           )}
         </IconButton>
-        
       </DrawerHeader>
       <List>
-        
-        {VIEWS.map((text) => (
-          <NavLink
-            to={`/${text.url}`}
-            key={text.labe}
-            style={({ isActive }) => {
-              return {
-                color: isActive ? "red" : "",
-                textDecoration: "none",
-                background: isActive ? "yellow" : "",
-              };
-            }}
-          >
-            <ListItem autoFocus alignItems="center" className="drawer">
-              <ListItemIcon>
-                <text.icon />
-              </ListItemIcon>
-              <ListItemText primary={text.labe} className="item-text" />
-            </ListItem>
-          </NavLink>
+        {VIEWS.map((item, index) => (
+          <Navitem
+            key={index}
+            href={`/${item.url}`}
+            title={item.labe}
+            icon={<item.icon />}
+          ></Navitem>
         ))}
       </List>
     </Drawer>
