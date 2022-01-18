@@ -80,6 +80,8 @@ const Login = (props: Props) => {
               />
               <div style={{ height: "24px" }}></div>
               <TextField
+                sx={{borderRadius: "5px", 
+                    border: "1px red", }}
                 label="password"
                 onChange={(e) => setPass(e.target.value)}
                 value={pass}
@@ -87,6 +89,7 @@ const Login = (props: Props) => {
               />
               <div style={{ height: "24px" }}></div>
               <Button
+                sx={{backgroundColor: "#ffa70d"}}
                 type="submit"
                 variant="contained"
                 color="primary"
