@@ -1,13 +1,14 @@
 
-
 .drawer {
     color: #000;
     height: 56px;
-    width: 227.6923065185547px;
+    width: 227px;
     left: 0px;
     top: 0px;
     border-radius: 100px;
+    padding-left: 100px
 }
+
 .drawer:hover {
     background-color: #dad8d6;
 }

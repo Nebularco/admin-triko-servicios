@@ -66,36 +66,43 @@ const Login = (props: Props) => {
           component={Paper}
           elevation={5}
           maxWidth="xs"
-          sx={{ maxWidth: "328px", width: "328px" }}
+          sx={{ maxWidth: "328px", width: "328px"}}
           className="container"
         >
           <div className="div">
             <img src={logo} alt="Avatar" className="avatar" />
             <form onSubmit={handleSubmit}>
-              <TextField
-                label="email"
+              <TextField 
+                label="Nombre de usuario"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 className="fieldContainer"
+                id="custom-css-outlined-input"
+                color="info"
+                
               />
               <div style={{ height: "24px" }}></div>
               <TextField
-                sx={{borderRadius: "5px", 
-                    border: "1px red", }}
-                label="password"
+                label="Contraseña"
                 onChange={(e) => setPass(e.target.value)}
                 value={pass}
                 className="fieldContainer"
+                id="custom-css-outlined-input"
+                color="info"
+                
               />
               <div style={{ height: "24px" }}></div>
-              <Button
-                sx={{backgroundColor: "#ffa70d"}}
+              <Button 
+                sx={{backgroundColor:"#ffa70d", color: "white",
+                '&:hover': {
+                  background: "#ffa70d"       
+                  }}}
                 type="submit"
                 variant="contained"
                 color="primary"
                 className="buttonContainer"
               >
-                Login
+                Ingresar
               </Button>
             </form>
           </div>

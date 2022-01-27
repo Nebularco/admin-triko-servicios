@@ -39,6 +39,7 @@ const Navitem = (props: Props) => {
             backgroundColor: active ? "#FFA70D" : "",
             borderRadius: "100px",
             margin: "0px 0px",
+            paddingLeft: "25px",
 
             fontFamily: "Roboto",
             fontStyle: "normal",
