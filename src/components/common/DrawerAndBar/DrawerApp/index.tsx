@@ -1,56 +1,46 @@
 import Drawer from "@mui/material/Drawer/Drawer";
-import IconButton from "@mui/material/IconButton/IconButton";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { DRAWERWIDTH } from "../../../../consts/drawer";
 import { DrawerHeader } from "../../../../styles/drawer/drawerHeader";
 import List from "@mui/material/List/List";
-import useTheme from "@mui/material/styles/useTheme";
 import { useAppDispatch, useAppSelector } from "../../../../redux/hooks/hooks";
-import { setDrawer } from "../../../../redux/slice/drawer";
-import { NavLink } from "react-router-dom";
-import ListItem from "@mui/material/ListItem/ListItem";
-import ListItemText from "@mui/material/ListItemText/ListItemText";
 import { VIEWS } from "../../../../consts/paths-routers";
 import "../../../../styles/drawer/drawer.css";
-import ListItemIcon from "@mui/material/ListItemIcon/ListItemIcon";
-import Navitem from "./Nav-item";
+import Navitem from "./component/Nav-item";
+import Toolbar from "@mui/material/Toolbar/Toolbar";
+import Typography from "@mui/material/Typography/Typography";
 
 interface Props {}
 
 const DrawerApp = (props: Props) => {
-  const drawer = useAppSelector((state) => state.drawer.open);
   const dispatch = useAppDispatch();
-  const theme = useTheme();
-  const handleDrawerClose = () => {
-    dispatch(setDrawer(false));
-  };
 
   return (
     <Drawer
+    variant = "permanent"
       sx={{
         width: DRAWERWIDTH,
         flexShrink: 0,
-        "& .MuiDrawer-paper": {
-          width: DRAWERWIDTH,
-          boxSizing: "border-box",
-        },
-      }}
-      variant="persistent"
-      anchor="left"
-      open={drawer}
+        [`& .MuiDrawer-paper`]: { width: DRAWERWIDTH, boxSizing: "border-box" },
+        [`& .MuiSvgIcon-root`]: { fontSize: "23px" },
+        }}
     >
-      <DrawerHeader className="drawer-container">
-        <h3 className="title-drawer-header">Operación actual</h3>
-        <IconButton onClick={handleDrawerClose}>
-          {theme.direction === "ltr" ? (
-            <ChevronLeftIcon />
-          ) : (
-            <ChevronRightIcon />
-          )}
-        </IconButton>
+      <Toolbar />
+      <DrawerHeader sx= {{ display: "block", marginTop: "20px"}} >
+        <Typography
+          sx ={{
+            fontSize: "22px",
+            fontWeight: 500,
+            fontFamily: "Roboto",
+            fontStyle: "normal",
+            lineHeight: "28px",
+          }}
+          className= "ListItemText"
+          >
+            Operación actual
+          </Typography>
       </DrawerHeader>
-      <List>
+        
+      <List disablePadding>
         {VIEWS.map((item, index) => (
           <Navitem
             key={index}

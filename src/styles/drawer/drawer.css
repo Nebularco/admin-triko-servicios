@@ -1,5 +1,5 @@
 
-.drawer {
+/*.drawer {
     color: #000;
     height: 56px;
     width: 227px;
@@ -7,17 +7,43 @@
     top: 0px;
     border-radius: 100px;
     padding-left: 100px
-}
+}*/
 
-.drawer:hover {
+/*.drawer:hover {
     background-color: #dad8d6;
-}
+}*/
 
-.drawer:active {
+/*.drawer:active {
     background-color: #FFA70D;
     color: white;
-}
+}*/
 
-.drawer-header {
+/*.drawer-header {
     position: fixed;
-}
+}*/
+.ListItemText {
+    margin-left: 28px;
+    margin-bottom: 18px;
+    padding: 24px, 12px, 12px, 12px;
+    width: 175px;
+    height: 48px;
+    left: 0px;
+    top: 55px;
+  }
+  
+  .drawer {
+    height: 56px;
+    width: 227.6923065185547px;
+    left: 0px;
+    top: 0px;
+    border-radius: 100px;
+    padding-left: 100px;
+  }
+  .drawer:hover {
+    background-color: #6750A414;
+  }
+
+  .log{
+    padding: 0px, 24px, 0px, 24px;
+  }
+  

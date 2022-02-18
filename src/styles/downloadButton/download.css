@@ -1,0 +1,9 @@
+button {
+    color: #3CAFE4;
+    border: none;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.15px;
+    cursor: pointer
+}

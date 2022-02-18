@@ -7,9 +7,9 @@ interface Column {
 }
 
 export const columns: readonly Column[] = [
-  { id: "Codigo", label: "Codigo", minWidth: 100 },
-  { id: "Metodo-pago", label: "Metodo Pago", minWidth: 100 },
+  { id: "Codigo", label: "Código", minWidth: 100 },
+  { id: "Metodo-pago", label: "Método de pago", minWidth: 100 },
   { id: "Total", label: "Total", minWidth: 100 },
   { id: "Status", label: "Estado", minWidth: 100 },
-  { id: "Creacion", label: "Fecha creacion", minWidth: 100 },
+  { id: "Creacion", label: "Fecha de creación", minWidth: 100 },
 ];

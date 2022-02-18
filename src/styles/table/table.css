@@ -1,9 +1,7 @@
-.table{
-    border-color: pink;
-}
+
 
 .table-row:hover{
-    background-color:rgba(0, 0, 0, 0.12);
+    background-color:rgba(0, 0, 0, 0.04);
 }
 
 .table-pagination{
@@ -12,6 +10,10 @@
 }
 
 .table-container {
-    border-radius: 12px;
+    margin-left: 16%;
+    width: 90% !important;
 }
 
+.table {
+    width: 400px;
+}

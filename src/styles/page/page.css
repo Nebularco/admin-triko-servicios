@@ -8,7 +8,7 @@
     height: 30px;
     width: 30px;
     margin-left: 10px;
-    background-color: rgb(221, 218, 218);
+    background-color: rgb(63, 81, 181, 0.08);
     padding: 3px;
     display: flex;
     justify-content: center;
@@ -16,4 +16,11 @@
 }
 .container-header {
     display: flex; flex-direction: row;
+    padding-left: 16%;
+    justify-content: space-between;
+    width: 88%;
+}
+
+.text-container {
+    display: flex
 }

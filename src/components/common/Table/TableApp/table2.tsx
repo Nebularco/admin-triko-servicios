@@ -21,8 +21,8 @@ interface Props {
 
 const TableApp = (props: Props) => {
   return (
-    <TableContainer component={Paper} >
-      <Table sx={{ minWidth: 700 }} aria-label="customized table" >
+    <TableContainer className="table-container" component={Paper} >
+      <Table className="table" sx={{ minWidth: 700 }} aria-label="customized table" >
         <TableHeadApp columns={props.columns} />
         <TableBodyApp data={props.data} nameTable={props.nameTable}  />
       </Table>
@@ -33,6 +33,7 @@ const TableApp = (props: Props) => {
         onPageChange={props.changePage}
         rowsPerPage={props.rowsPerPage}
         onRowsPerPageChange={props.onRowsPerPageChange}
+        labelRowsPerPage={"Filas por página"}
     />
       
     </TableContainer>

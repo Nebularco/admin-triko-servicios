@@ -54,7 +54,7 @@ const Orders = (props: Props) => {
   return (
     <>
       <Page
-        namePage="Ordenes"
+        namePage="Órdenes"
         type="default"
         lg={12}
         md={12}

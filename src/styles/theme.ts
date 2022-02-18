@@ -12,7 +12,7 @@ export const theme = createTheme({
       default: "#E5E5E5",
     },
     info: {
-      main: "#000000",
+      main: "#9b9b9b",
     },
   },
 });

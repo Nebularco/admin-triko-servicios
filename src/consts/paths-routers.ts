@@ -7,5 +7,5 @@ export const VIEWS = [
   { url: "servicios", labe: "Servicios", icon: RoomServiceIcon },
   { url: "clientes", labe: "Clientes", icon: GroupsIcon },
   { url: "trikos", labe: "Trikos", icon: EngineeringIcon },
-  { url: "ordenes", labe: "Ordenes", icon: MonetizationOnIcon },
+  { url: "ordenes", labe: "Órdenes", icon: MonetizationOnIcon },
 ];

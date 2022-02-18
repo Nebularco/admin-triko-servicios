@@ -11,6 +11,7 @@ import DrawerApp from "../DrawerAndBar/DrawerApp";
 import Loading from "../Loading";
 import SearchIcon from '@mui/icons-material/Search';
 import "../../../styles/page/page.css";
+import DownloadButton from "../DownloadButton/DownloadButton";
 
 interface Props {
   children: React.ReactChild[] | React.ReactChild;
@@ -40,10 +41,13 @@ const Page = (props: Props) => {
             <DrawerHeader />
             <Container >
               <Typography sx={{ mb: 3 }} variant="h5" className="container-header">
-                {props.namePage}
-                <div className="icon-container">
-                  <SearchIcon className="icon-search"></SearchIcon>
-              </div>
+                <div className="text-container">
+                  {props.namePage}
+                  <div className="icon-container">
+                    <SearchIcon className="icon-search"></SearchIcon>
+                  </div>
+                </div>
+                <DownloadButton text='Descargar' />
               </Typography>
               
 

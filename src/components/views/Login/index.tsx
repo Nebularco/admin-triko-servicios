@@ -14,6 +14,7 @@ import logo from "../../assets/img/Logo.svg";
 import "../../../styles/login/login.css";
 import Container from "@mui/material/Container/Container";
 import Avatar from "@mui/material/Avatar/Avatar";
+import { borderRadius } from "@mui/system";
 
 interface Props {}
 
@@ -66,7 +67,9 @@ const Login = (props: Props) => {
           component={Paper}
           elevation={5}
           maxWidth="xs"
-          sx={{ maxWidth: "328px", width: "328px"}}
+          sx={{ maxWidth: "328px", 
+                width: "328px",
+                borderRadius:"12px"}}
           className="container"
         >
           <div className="div">
@@ -95,7 +98,8 @@ const Login = (props: Props) => {
               <Button 
                 sx={{backgroundColor:"#ffa70d", color: "white",
                 '&:hover': {
-                  background: "#ffa70d"       
+                  background: "#ffa70d",
+                  textTransform: "uppercase"//agrego uppercase Ingresar  
                   }}}
                 type="submit"
                 variant="contained"
