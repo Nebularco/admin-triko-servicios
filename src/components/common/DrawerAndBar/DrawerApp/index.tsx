@@ -29,7 +29,7 @@ const DrawerApp = (props: Props) => {
         <Typography
           sx ={{
             fontSize: "22px",
-            fontWeight: 500,
+            fontWeight: "500px",
             fontFamily: "Roboto",
             fontStyle: "normal",
             lineHeight: "28px",

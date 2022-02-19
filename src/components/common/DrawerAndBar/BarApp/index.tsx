@@ -13,6 +13,7 @@ import { Container } from "@mui/material";
 import Avatar from "@mui/material/Avatar/Avatar";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Stack from '@mui/material/Stack';
+import FadeMenu from './components/FadeMenu/FadeMenu';
 
 interface Props {}
 
@@ -71,8 +72,9 @@ const BarApp = (props: Props) => {
             style={{width: "90px", height: "45.53"}}
           />
         </Typography>
-        <Container sx={{ display: "inline-block", width: "237px" }}>
-          <div className="user">
+        <Container sx={{ display: "flex", width: "237px", justifyContent: "center", alignItems:"center" }}>
+          <FadeMenu></FadeMenu>
+          <div className="user" style={{ display: "flex", justifyContent: "center", alignItems:"center" }}>
             <Typography component="div" style={{ display: "inline-block" }}>
               <IconButton
                 size="small"
@@ -101,6 +103,7 @@ const BarApp = (props: Props) => {
                 color: "#000000",
                 lineHeight: "24px",
                 fontStyle: "normal",
+                paddingRight: "20px"
               }}
             >
               admin@triko.com
