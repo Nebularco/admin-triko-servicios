@@ -87,6 +87,7 @@ const Login = (props: Props) => {
               <div style={{ height: "24px" }}></div>
               <TextField
                 label="Contraseña"
+                type= "password"
                 onChange={(e) => setPass(e.target.value)}
                 value={pass}
                 className="fieldContainer"
