@@ -7,11 +7,12 @@
 }
 
 .container {
-  height: 312px;
   max-width: 329px;
   width: 328px;
+  height: 312px;
   margin-top: 213px;
-  border-radius: 20px;
+  top: 213px;
+  left: 476px;
 }
 
 .div {

@@ -69,7 +69,7 @@ const Login = (props: Props) => {
           maxWidth="xs"
           sx={{ maxWidth: "328px", 
                 width: "328px",
-                borderRadius:"12px"}}
+                borderRadius:"12px",}}
           className="container"
         >
           <div className="div">
@@ -97,10 +97,9 @@ const Login = (props: Props) => {
               />
               <div style={{ height: "24px" }}></div>
               <Button 
-                sx={{backgroundColor:"#ffa70d", color: "white",
+                sx={{backgroundColor:"#ffa70d",color: "white",
                 '&:hover': {
                   background: "#ffa70d",
-                  textTransform: "uppercase"//agrego uppercase Ingresar  
                   }}}
                 type="submit"
                 variant="contained"

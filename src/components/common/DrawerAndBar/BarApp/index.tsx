@@ -14,6 +14,8 @@ import Avatar from "@mui/material/Avatar/Avatar";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Stack from '@mui/material/Stack';
 import FadeMenu from './components/FadeMenu/FadeMenu';
+import "../../../../styles/bar/barApp.css";
+import user from '../../../assets/img/user.svg';
 
 interface Props {}
 
@@ -84,11 +86,9 @@ const BarApp = (props: Props) => {
                 onClick={handleMenu}
                 color="inherit"
               >
-                <Stack direction="row" spacing={2}>
-                  <Avatar sx={{
-                    background: "#83CFEF",}}>
-                  </Avatar>
-                </Stack>
+                
+                <img src={user} className= "icon-email" style={{ marginRight: '2px' }} />
+               
               
               </IconButton>
             </Typography>
@@ -103,7 +103,8 @@ const BarApp = (props: Props) => {
                 color: "#000000",
                 lineHeight: "24px",
                 fontStyle: "normal",
-                paddingRight: "20px"
+                paddingRight: "20px",
+                top: "8px",
               }}
             >
               admin@triko.com
